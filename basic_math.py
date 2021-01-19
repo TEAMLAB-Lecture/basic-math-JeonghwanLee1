@@ -5,8 +5,7 @@
 """
 여기서 간단한 수학을 하는 프로그램을 만들것입니다. 
 """
-import numpy as np
-
+print("123")
 def get_greatest(number_list):
     """
     주어진 리스트에서 가장 큰 숫자를 반환함
@@ -45,7 +44,7 @@ def get_smallest(number_list):
             >>> bm.get_smallest(number_list)
             11
     """
-    smallest_number = min(smallest_number)
+    smallest_number = min(number_list)
     return smallest_number
 
 
@@ -66,7 +65,7 @@ def get_mean(number_list):
             >>> bm.get_mean(number_list)
             47
     """
-    mean = sum(l)/len(l)
+    mean = sum(number_list)/len(number_list)
     return mean
 
 
@@ -90,5 +89,10 @@ def get_median(number_list):
             >>> bm.get_median(number_list2)
             35.5
     """
-    median = np.median(number_list)
+    number_list = sorted(number_list)
+    if len(number_list)%2==1:
+        median = number_list[len(number_list)//2]
+    else:
+        median = (number_list[len(number_list)//2]+number_list[len(number_list)//2-1])/2
     return median
+
